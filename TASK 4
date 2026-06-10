@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float celsius, fahrenheit;
+
+    // Display user selection menu
+    printf("=== Temperature Converter ===\n");
+    printf("1. Convert Celsius to Fahrenheit\n");
+    printf("2. Convert Fahrenheit to Celsius\n");
+    printf("Enter your choice (1 or 2): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1:
+            // Prompt user for input
+            printf("Enter temperature in Celsius: ");
+            scanf("%f", &celsius);
+            
+            // Formula: (C * 9/5) + 32
+            // Note: 9.0 and 5.0 ensure floating-point division
+            fahrenheit = (celsius * 9.0 / 5.0) + 32.0;
+            
+            printf("%.2f Celsius = %.2f Fahrenheit\n", celsius, fahrenheit);
+            break;
+
+        case 2:
+            // Prompt user for input
+            printf("Enter temperature in Fahrenheit: ");
+            scanf("%f", &fahrenheit);
+            
+            // Formula: (F - 32) * 5/9
+            celsius = (fahrenheit - 32.0) * 5.0 / 9.0;
+            
+            printf("%.2f Fahrenheit = %.2f Celsius\n", fahrenheit, celsius);
+            break;
+
+        default:
+            printf("Invalid choice! Please select 1 or 2.\n");
+    }
+
+    return 0;
+}
